@@ -13,3 +13,6 @@ a = Solution()
     
 result = a.reconstructQueue([[7, 0], [4, 4], [7, 1], [5, 0], [6, 1], [5, 2]])
 print(result)
+
+# h is the height of the person.
+# k is the number of people in front of this person who are taller or have the same height
