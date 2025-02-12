@@ -36,7 +36,7 @@ Using a list (result.append(symb * count)) is more efficient than string concate
 Final Complexity Analysis
 The loop runs at most 13 iterations.
 Each operation inside the loop (divmod(), append(), join()) is constant time.
-Overall, the solution runs in O(1) time complexity. 🚀
+Overall, the solution runs in O(1) time complexity. 
 
 '''
 
