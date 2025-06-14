@@ -36,3 +36,29 @@ print(sol.partition("aab"))
 # | **Time**                   | `O(2^n * n)` |
 # | **Space (total)**          | `O(n * 2^n)` |
 # | **Space (recursion only)** | `O(n)`       |
+
+
+# dfs(0)
+# ├── j = 0 → s[0:1] = "a" is palindrome
+# │   ├── part = ["a"]
+# │   └── dfs(1)
+# │       ├── j = 1 → s[1:2] = "a" is palindrome
+# │       │   ├── part = ["a", "a"]
+# │       │   └── dfs(2)
+# │       │       ├── j = 2 → s[2:3] = "b" is palindrome
+# │       │       │   ├── part = ["a", "a", "b"]
+# │       │       │   └── dfs(3) → end of string, append to `res`
+# │       │       │       └── res = [["a", "a", "b"]]
+# │       │       └── backtrack: part = ["a", "a"]
+# │       └── backtrack: part = ["a"]
+# │
+# ├── j = 1 → s[0:2] = "aa" is palindrome
+# │   ├── part = ["aa"]
+# │   └── dfs(2)
+# │       ├── j = 2 → s[2:3] = "b" is palindrome
+# │       │   ├── part = ["aa", "b"]
+# │       │   └── dfs(3) → end of string
+# │       │       └── res = [["a", "a", "b"], ["aa", "b"]]
+# │       └── backtrack: part = ["aa"]
+# │
+# └── j = 2 → s[0:3] = "aab" is NOT a palindrome → skip
